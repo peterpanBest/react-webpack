@@ -1,48 +1,44 @@
 const path = require('path');
+const merge = require('webpack-merge');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const commonConfig = require('./webpack.common.config.js');
 
-module.exports = {
-
-    /*入口*/
-    entry: [
-        'react-hot-loader/patch',
-        path.join(__dirname, 'src/index.js')
-    ], 
-    /*输出到dist文件夹，输出文件名字为bundle.js*/
-    output: {
-        path: path.join(__dirname, './dist'),
-        filename: 'bundle.js'
+const devConfig = {
+    devtool: 'inline-source-map',
+    entry: {
+        app: [
+            'react-hot-loader/patch',
+            path.join(__dirname, 'src/index.js')
+        ]
     },
-    resolve: {
-        alias: {
-            pages: path.join(__dirname, 'src/pages'),
-            component: path.join(__dirname, 'src/component'),
-            router: path.join(__dirname, 'src/router'),
-            actions: path.join(__dirname, 'src/redux/actions'),
-            reducers: path.join(__dirname, 'src/redux/reducers')
-        }
+    output: {
+        /*这里本来应该是[chunkhash]的，但是由于[chunkhash]和react-hot-loader不兼容。只能妥协*/
+        filename: '[name].[hash].js'
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
-                use: ['babel-loader?cacheDirectory=true'],
-                include: path.join(__dirname, 'src')
+                test: /\.(css|scss)$/,
+                use: ["style-loader", "css-loader", "postcss-loader"]
             }
         ]
     },
     devServer: {
-        port: 8082,
-        host: "localhost",
-        hot: true,
+        port:8082,
+        host: 'localhost',
         contentBase: path.join(__dirname, './dist'),
         historyApiFallback: true,
-        proxy: {
-            target: "http://localhost:8082",
-            secure: false
+        hot: true//这个得开启，不然无法实现热更新
+    }
+};
+
+module.exports = merge({
+    customizeArray(a, b, key) {
+        /*entry.app不合并，全替换*/
+        if (key === 'entry.app') {
+            return b;
         }
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ]
-}
+        return undefined;
+    }
+})(commonConfig, devConfig);

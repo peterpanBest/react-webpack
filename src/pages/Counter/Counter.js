@@ -7,6 +7,7 @@ class Counter extends Component {
     render() {
         return (
             <div>
+                <h1>22222</h1>
                 <div>当前计数为{this.props.counter.count}</div>
                 <button onClick={() => this.props.increment()}>自增
                 </button>
