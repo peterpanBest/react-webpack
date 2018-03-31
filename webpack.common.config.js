@@ -19,10 +19,11 @@ commonConfig = {
     },
     module: {
         rules: [{
-            test: /\.js$/,
+            test: /\.(js|jsx)$/,
             use: ['babel-loader?cacheDirectory=true'],
             include: path.join(__dirname, 'src')
-        }, {
+        }, 
+        {
             test: /\.(png|jpg|gif)$/,
             use: [{
                 loader: 'url-loader',
@@ -36,7 +37,8 @@ commonConfig = {
         new webpack.HotModuleReplacementPlugin(),//这个要记得加上，不然hot更新会丢失state状态
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: path.join(__dirname, 'src/index.html')
+            template: path.join(__dirname, 'src/index.html'),
+            projectPath: 'public'
         }),
         new webpack.HashedModuleIdsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
