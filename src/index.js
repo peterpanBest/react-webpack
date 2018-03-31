@@ -4,13 +4,14 @@ import {AppContainer} from 'react-hot-loader';
 import {Provider} from 'react-redux';
 import store from './redux/store';
 import {BrowserRouter as Router} from 'react-router-dom';
-import App from './component/App/App';
+import Index from "pages/Index/Index.js"
 
-renderWithHotReload(App);
+
+renderWithHotReload(Index);
 
 if (module.hot) {
-    module.hot.accept('./component/App/App', () => {
-        const NextApp = require('./component/App/App').default;
+    module.hot.accept('pages/Index/Index.js', () => {
+        const NextApp = require('pages/Index/Index.js').default;
         renderWithHotReload(NextApp);
     });
 }

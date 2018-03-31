@@ -14,7 +14,7 @@ const publicConfig = {
             test: /\.css$/,
             use: ExtractTextPlugin.extract({
                 fallback: "style-loader",
-                use: ["css-loader", "postcss-loader"]
+                use: ['css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base4:5]!resolve-url!postcss', "postcss-loader"]
             })
         }]
     },
