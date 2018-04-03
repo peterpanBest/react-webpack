@@ -5,8 +5,7 @@ const webpack = require('webpack');
 commonConfig = {
     entry: {
         app: [
-            'babel-polyfill',
-            'react-hot-loader/patch',
+            "babel-polyfill",
             path.join(__dirname, 'src/index.js')
         ],
         vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux']
@@ -18,27 +17,33 @@ commonConfig = {
         publicPath: "/"
     },
     module: {
-        rules: [{
-            test: /\.(js|jsx)$/,
-            use: ['babel-loader?cacheDirectory=true'],
-            include: path.join(__dirname, 'src')
-        }, 
-        {
-            test: /\.(png|jpg|gif)$/,
-            use: [{
-                loader: 'url-loader',
-                options: {
-                    limit: 8192
-                }
-            }]
-        }]
+        rules: [
+            {  
+                test: /\.jsx?$/,  
+                exclude: /(node_modules|bower_components)/,  
+                loader: 'babel-loader', // 'babel-loader' is also a legal name to reference  
+                query: {  
+                  presets: ['react', 'es2015']  
+                }  
+            }, 
+            {
+                test: /\.js$/,
+                use: ['babel-loader?cacheDirectory=true'],
+                include: path.join(__dirname, 'src')
+                }, {
+                test: /\.(png|jpg|gif)$/,
+                use: [{
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8192
+                    }
+                }]
+             }]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),//这个要记得加上，不然hot更新会丢失state状态
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: path.join(__dirname, 'src/index.html'),
-            projectPath: 'public'
+            template: path.join(__dirname, 'src/index.html')
         }),
         new webpack.HashedModuleIdsPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
@@ -52,7 +57,7 @@ commonConfig = {
     resolve: {
         alias: {
             pages: path.join(__dirname, 'src/pages'),
-            components: path.join(__dirname, 'src/components'),
+            components: path.join(__dirname, 'src/component'),
             router: path.join(__dirname, 'src/router'),
             actions: path.join(__dirname, 'src/redux/actions'),
             reducers: path.join(__dirname, 'src/redux/reducers')
