@@ -1,0 +1,26 @@
+#tab-bar.demo {
+    display: flex;
+    flex-direction: column;
+}
+
+#tab-bar .demoName {
+    height: 40px;
+}
+
+#tab-bar .demo-preview-item .am-tab-bar {
+    background-color: white;
+}
+
+#tab-bar .am-tab-bar-tab {
+    margin-top: 20px!important;
+}
+
+.am-tabs-tab-bar-wrap{
+    
+}
+
+.am-tabs-tab-bar-wrap .am-tab-bar-bar {
+    height: 120px!important;
+    position: fixed;
+    bottom: 0;
+}
