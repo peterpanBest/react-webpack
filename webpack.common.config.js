@@ -23,6 +23,11 @@ commonConfig = {
                 use: {
                     loader: 'babel-loader',
                     options: {
+                        plugins: [
+                            // 'external-helpers', // why not work?
+                            // ["transform-runtime", { polyfill: false }],
+                            ["import", [{ "style": "css", "libraryName": "antd-mobile" }]]
+                        ],
                         presets: ['react', 'es2015'] ,
                         babelrc: true
                     }
