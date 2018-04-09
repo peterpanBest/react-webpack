@@ -76,7 +76,6 @@ export default class TabbarCom extends Component {
                     }}
                     data-seed="logId1"
                 >
-    
                 </TabBar.Item>
                 <TabBar.Item
                     icon={
