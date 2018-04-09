@@ -23,6 +23,7 @@
     "autoprefixer": "^8.2.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
+    "babel-plugin-import": "^1.7.0",
     "babel-plugin-react-transform": "^3.0.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
@@ -50,7 +51,9 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "antd-mobile": "^2.1.8",
     "axios": "^0.18.0",
+    "npm": "^5.8.0",
     "postcss-px2rem": "^0.3.0",
     "react": "^16.2.0",
     "react-css-modules": "^4.7.2",

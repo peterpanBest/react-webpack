@@ -7,8 +7,7 @@ commonConfig = {
         app: [
             "babel-polyfill",
             path.join(__dirname, 'src/index.js')
-        ],
-        vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux']
+        ]
     },
     output: {
         path: path.join(__dirname, './dist'),
@@ -45,13 +44,7 @@ commonConfig = {
             filename: 'index.html',
             template: path.join(__dirname, 'src/index.html')
         }),
-        new webpack.HashedModuleIdsPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor'
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'runtime'
-        })
+        new webpack.HashedModuleIdsPlugin()
     ],
 
     resolve: {
