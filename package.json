@@ -40,6 +40,7 @@
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^2.1.3",
     "precss": "^3.1.2",
+    "react-app-rewired": "^1.5.0",
     "react-hot-loader": "^4.0.0",
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.4",
@@ -51,6 +52,7 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
+    "@babel/helper-module-imports": "^7.0.0-beta.44",
     "antd-mobile": "^2.1.8",
     "axios": "^0.18.0",
     "npm": "^5.8.0",

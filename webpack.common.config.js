@@ -20,10 +20,13 @@ commonConfig = {
             {  
                 test: /\.jsx?$/,  
                 exclude: /(node_modules|bower_components)/,  
-                loader: 'babel-loader', // 'babel-loader' is also a legal name to reference  
-                query: {  
-                  presets: ['react', 'es2015']  
-                }  
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['react', 'es2015'] ,
+                        babelrc: true
+                    }
+                }
             }, 
             {
                 test: /\.js$/,
@@ -34,7 +37,8 @@ commonConfig = {
                 use: [{
                     loader: 'url-loader',
                     options: {
-                        limit: 8192
+                        limit: 8192,
+                        babelrc: true
                     }
                 }]
              }]
@@ -46,7 +50,6 @@ commonConfig = {
         }),
         new webpack.HashedModuleIdsPlugin()
     ],
-
     resolve: {
         alias: {
             pages: path.join(__dirname, 'src/pages'),
