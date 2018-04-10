@@ -46,8 +46,8 @@ export default class TabbarCom extends Component {
                         });
                     }}
                     data-seed="logId"
-                >
-                </TabBar.Item>
+                />
+             
                 <TabBar.Item
                     icon={
                         <div style={{
@@ -75,8 +75,8 @@ export default class TabbarCom extends Component {
                         });
                     }}
                     data-seed="logId1"
-                >
-                </TabBar.Item>
+                />
+              
                 <TabBar.Item
                     icon={
                         <div style={{
@@ -103,9 +103,8 @@ export default class TabbarCom extends Component {
                             selectedTab: 'greenTab',
                         });
                     }}
-                >
+                />
                
-                </TabBar.Item>
                 <TabBar.Item
                     icon={
                         <div style={
@@ -135,9 +134,7 @@ export default class TabbarCom extends Component {
                             selectedTab: 'yellowTab',
                         });
                     }}
-                >
-             
-                </TabBar.Item>
+                />
             </TabBar>
         );
     }
