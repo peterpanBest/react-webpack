@@ -11,8 +11,8 @@ import "../public/script/flexible.js";
 renderWithHotReload(Index);
 
 if (module.hot) {
-    module.hot.accept(Index, () => {
-        const NextApp = require(Index).default;
+    module.hot.accept("./pages/Index/Index.jsx", () => {
+        const NextApp = require("./pages/Index/Index.jsx").default;
         renderWithHotReload(NextApp);
     });
 }

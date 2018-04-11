@@ -1,13 +1,13 @@
-const merge = require('webpack-merge');
 const path = require('path');
+const merge = require('webpack-merge');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const commonConfig = require('./webpack.common.config.js');
 
 const devConfig = {
     devtool: 'inline-source-map',
     entry: {
         app: [
-            'babel-polyfill',
             'react-hot-loader/patch',
             path.join(__dirname, 'src/index.js')
         ]
@@ -19,12 +19,14 @@ const devConfig = {
     module: {
         rules: [ 
             {
-                test: /\.css$/,
-                use: ["style-loader","css-loader","postcss-loader"]
-            }]
+                test: /\.(css|scss)$/,
+                use: ["style-loader", "css-loader", "postcss-loader"]
+            }
+        ]
     },
     devServer: {
         port: 8088,
+        hot: true,//这个得开启，不然无法实现不影响state的热更新
         contentBase: path.join(__dirname, './dist'),
         historyApiFallback: true,
         host: 'localhost',

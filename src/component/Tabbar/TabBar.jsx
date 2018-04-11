@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { TabBar } from 'antd-mobile';
+import { Link } from 'react-router-dom';
 import "./Tabbar.css";
  
 export default class TabbarCom extends Component {
@@ -8,10 +9,27 @@ export default class TabbarCom extends Component {
         this.state = {
             selectedTab: 'redTab',
             hidden: false,
-            fullScreen: false,
+            fullScreen: false
         };
     }
 
+    goRouterFn(para){     
+        // switch(para){
+        //     case 1:
+        //         browserHistory.push('/');
+        //         break;
+        //     case 2:
+        //         hashHistory.push("/page1");
+        //         this.props.history.push("/page1");
+        //         break;
+        //     case 3:
+        //         browserHistory.push('/counter');
+        //         break;
+        //     case 4:
+        //         browserHistory.push('/userinfo');
+        //         break;
+        // }
+    }
 
     render() {
         return (
@@ -47,15 +65,15 @@ export default class TabbarCom extends Component {
                     }}
                     data-seed="logId"
                 />
-             
+
                 <TabBar.Item
                     icon={
-                        <div style={{
-                            width: '22px',
-                            height: '22px',
-                            background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat'
-                        }}
-                        />
+                            <div style={{
+                                width: '22px',
+                                height: '22px',
+                                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat'
+                            }}
+                            />
                     }
                     selectedIcon={
                         <div style={{
@@ -73,10 +91,11 @@ export default class TabbarCom extends Component {
                         this.setState({
                             selectedTab: 'redTab',
                         });
+                        this.goRouterFn(2);
                     }}
-                    data-seed="logId1"
+                    data-seed="logId1" 
                 />
-              
+
                 <TabBar.Item
                     icon={
                         <div style={{
@@ -102,6 +121,7 @@ export default class TabbarCom extends Component {
                         this.setState({
                             selectedTab: 'greenTab',
                         });
+                        this.goRouterFn(3);
                     }}
                 />
                
@@ -133,6 +153,7 @@ export default class TabbarCom extends Component {
                         this.setState({
                             selectedTab: 'yellowTab',
                         });
+                        this.goRouterFn(4);
                     }}
                 />
             </TabBar>
