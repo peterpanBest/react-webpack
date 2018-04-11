@@ -11,7 +11,7 @@ commonConfig = {
     },
     output: {
         path: path.join(__dirname, './dist'),
-        filename: '[name].[chunkhash].js',
+        filename: '[name].[hash].js',
         chunkFilename: '[name].[chunkhash].js',
         publicPath: "/"
     },
@@ -24,8 +24,7 @@ commonConfig = {
                     loader: 'babel-loader',
                     options: {
                         plugins: [
-                            // 'external-helpers', // why not work?
-                            // ["transform-runtime", { polyfill: false }],
+                            //这个是实现按需加载ant design mobile的办法
                             ["import", [{ "style": "css", "libraryName": "antd-mobile" }]]
                         ],
                         presets: ['react', 'es2015'] ,

@@ -5,7 +5,7 @@ import {
     Route, Link,
     Redirect, withRouter
 } from "react-router-dom";
-import "./Tabbar.css";
+import styles from "./Tabbar.css?raw";
 import history from '../../history';
  
 export default class TabbarCom extends Component {
