@@ -8,6 +8,7 @@ import Index from "pages/Index/Index.jsx"
 // import "../public/style/reset.css";
 import "../public/script/flexible.js";
 import history  from "./history";
+import "./static.css";
 // import 'antd-mobile/dist/antd-mobile.css';
 
 renderWithHotReload(Index);
