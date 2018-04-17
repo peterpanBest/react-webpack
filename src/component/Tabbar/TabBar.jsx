@@ -6,7 +6,7 @@ import {
     Redirect, withRouter
 } from "react-router-dom";
 import history from '../../history';
-import styled from 'styled-components';
+// import styled from 'styled-components';
  
 export default class TabbarCom extends Component {
     constructor(props) {

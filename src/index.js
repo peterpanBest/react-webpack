@@ -5,10 +5,11 @@ import {Provider} from 'react-redux';
 import store from './redux/store';
 import { Router } from 'react-router-dom';
 import Index from "pages/Index/Index.jsx"
-// import "../public/style/reset.css";
+import "../public/style/reset.css";
 import "../public/script/flexible.js";
+import "../public/iconfont/iconfont.css";
 import history  from "./history";
-import "./static.css";
+// import "./static.css";
 // import 'antd-mobile/dist/antd-mobile.css';
 
 renderWithHotReload(Index);

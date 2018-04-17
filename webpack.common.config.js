@@ -45,7 +45,16 @@ commonConfig = {
                         babelrc: true
                     }
                 }]
-             }]
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader?name=fonts/[name].[hash:7].[ext]'
+            },
+            {
+                test: /\.svg/,
+                use: ['file-loader']
+            }
+        ]
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

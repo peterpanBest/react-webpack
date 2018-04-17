@@ -1,0 +1,22 @@
+import React, { Component } from "react";
+import styled from "./searchcom.css";
+
+export default class SearchCom extends Component{
+    render(){
+        return (
+            <div>
+                <div className={styled.box}>
+                    <div className={styled.w700}>
+                        <span className={styled.searchIcon}></span>
+                        <div className={styled.searchDiv}>
+                            <span className={styled.spanIcon}></span>
+                            <span className={styled.searchSearch}></span>
+                            <input type="text" className={styled.inputDiv} placeholder="京东商城" />
+                        </div>
+                        <span className={styled.loginSpan}>登录</span>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}

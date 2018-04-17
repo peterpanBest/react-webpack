@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch,Redirect} from 'react-router-dom';
 
 import Bundle from './Bundle';
 import Loading from '../component/Loading/Loading';
@@ -22,9 +22,9 @@ const createComponent = (component) => (props) => (
 export default () => (
     <div>
         <Switch>
-            <Route exact path="/" component={createComponent(Home)}/>
-            <Route path="/home" component={createComponent(Home)} />
+            <Route exact  path="/" component={createComponent(Page1)} />
             <Route path="/page1" component={createComponent(Page1)}/>
+            <Route path="/home" component={createComponent(Home)}/>
             <Route path="/counter" component={createComponent(Counter)}/>
             <Route path="/userinfo" component={createComponent(UserInfo)}/>
             <Route component={createComponent(NotFound)}/>

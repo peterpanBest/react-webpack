@@ -35,7 +35,7 @@ const devConfig = {
             {
                 test: /\.css$/,
                 exclude: [/node_modules/],
-                use: ExtractTextPlugin.extract({
+                use:['css-hot-loader'].concat(ExtractTextPlugin.extract({
                     fallback: "style-loader",
                     use: [
                         {
@@ -49,7 +49,7 @@ const devConfig = {
                             loader: "postcss-loader",
                         }
                     ]
-                })
+                }))
             },
             {
                 test: /\.css$/,
@@ -77,7 +77,8 @@ const devConfig = {
             template: path.join(__dirname, 'src/index.html')
         }),
         new ExtractTextPlugin({
-            filename: '[name].[contenthash:5].css',
+            // filename: '[name].[contenthash:5].css',
+            filename: 'app.css',
             allChunks: true
         })
     ],

@@ -9,13 +9,45 @@ const commonConfig = require('./webpack.common.config.js');
 const publicConfig = {
     devtool: 'cheap-module-source-map',
     module: {
-        rules: [{
-            test: /\.css$/,
-            use: ExtractTextPlugin.extract({
-                fallback: "style-loader",
-                use: ["css-loader","postcss-loader"]
-            })
-        }]
+        rules: [
+            {
+                test: /\.css$/,
+                exclude: [/node_modules/],
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: [
+                        {
+                            loader: "css-loader",
+                            options: {
+                                modules: true,
+                                localIdentName: '[local]--[hash:base64:5]'
+                            }
+                        },
+                        {
+                            loader: "postcss-loader",
+                        }
+                    ]
+                })
+            },
+            {
+                test: /\.css$/,
+                exclude: [/src/],
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: [
+                        {
+                            loader: "css-loader",
+                            options: {
+                                importLoaders: 1
+                            }
+                        },
+                        {
+                            loader: "postcss-loader",
+                        }
+                    ]
+                })
+            }
+        ]
     },
     plugins: [
         new CleanWebpackPlugin(['dist/*.*']),
