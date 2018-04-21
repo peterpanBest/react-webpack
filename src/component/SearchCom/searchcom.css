@@ -53,31 +53,41 @@
 }
 
 .inputDiv{
+    display: block;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    width: 360px;
+    padding-left: 15px;
+    margin-top: 8px;
+}
+
+/* .inputDiv{
     height: 60px;
     width: 360px;
     float: left;
     border: none;
     margin-top: 5px;
     margin-left: 10px;
-}
-
-.inputDiv::-webkit-input-placeholder { /* WebKit browsers */
-    color:    black;
+} */
+/* 
+.inputDiv::-webkit-input-placeholder { 
+    color:black;
     text-align: left;
     padding: 20px;
 }
-.inputDiv:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    black;
+.inputDiv:-moz-placeholder {
+    color:black;
     text-align: left;
     padding: 20px;
 }
-.inputDiv::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    black;
+.inputDiv::-moz-placeholder { 
+    color:black;
     text-align: left;
     padding: 20px;
 }
-.inputDiv:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    black;
+.inputDiv:-ms-input-placeholder { 
+    color:black;
     text-align: left;
     padding: 20px;
-}
+} */

@@ -11,7 +11,7 @@ export default class SearchCom extends Component{
                         <div className={styled.searchDiv}>
                             <span className={styled.spanIcon}></span>
                             <span className={styled.searchSearch}></span>
-                            <input type="text" className={styled.inputDiv} placeholder="京东商城" />
+                            <span className={styled.inputDiv}>京东商城</span>
                         </div>
                         <span className={styled.loginSpan}>登录</span>
                     </div>

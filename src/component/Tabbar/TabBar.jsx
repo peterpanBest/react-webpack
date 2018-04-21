@@ -6,6 +6,14 @@ import {
     Redirect, withRouter
 } from "react-router-dom";
 import history from '../../history';
+
+const _homePng = require("../../../public/image/_home.png");
+const homePng = require("../../../public/image/home.png");
+const typePng = require("../../../public/image/type.png");
+const _typePng = require("../../../public/image/_type.png");
+const cart = require("../../../public/image/cart.png");
+const my = require("../../../public/image/my.png");
+const _my = require("../../../public/image/_my.png");
 // import styled from 'styled-components';
  
 export default class TabbarCom extends Component {
@@ -18,6 +26,7 @@ export default class TabbarCom extends Component {
         };
     }
     render() {
+        console.log(_homePng)
         return (
                 <TabBar
                     unselectedTintColor="#949494"
@@ -26,24 +35,23 @@ export default class TabbarCom extends Component {
                     hidden={this.state.hidden}
                 >
                     <TabBar.Item
-                        title="Life"
+                        title=""
                         key="Life"
                         icon={<div style={{
-                            width: '22px',
-                            height: '22px',
-                            background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat'
+                            width: '80px',
+                            height: '70px',
+                            background: 'url('+homePng+') center center /  70px 50px no-repeat'
                         }}
                         />
                         }
                         selectedIcon={<div style={{
-                            width: '22px',
-                            height: '22px',
-                            background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat'
+                            width: '80px',
+                            height: '70px',
+                            background: "url("+_homePng+") center center /  70px 50px no-repeat"
                         }}
                         />
                         }
                         selected={this.state.selectedTab === 'blueTab'}
-                        badge={1}
                         onPress={() => {
                             this.setState({
                                 selectedTab: 'blueTab',
@@ -56,23 +64,22 @@ export default class TabbarCom extends Component {
                     <TabBar.Item
                         icon={
                             <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat'
+                                width: '80px',
+                                height: '70px',
+                                background: 'url('+typePng+') center center /  70px 50px no-repeat'
                             }}
                             />
                         }
                         selectedIcon={
                             <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat'
+                                width: '80px',
+                                height: '70px',
+                                background: 'url('+_typePng+') center center /  70px 50px no-repeat'
                             }}
                             />
                         }
-                        title="Koubei"
+                        title=""
                         key="Koubei"
-                        badge={'new'}
                         selected={this.state.selectedTab === 'redTab'}
                         onPress={() => {
                             this.setState({
@@ -86,23 +93,22 @@ export default class TabbarCom extends Component {
                     <TabBar.Item
                         icon={
                             <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat'
+                                width: '80px',
+                                height: '70px',
+                                background: 'url('+cart+') center center /  70px 50px no-repeat'
                             }}
                             />
                         }
                         selectedIcon={
                             <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat'
+                                width: '80px',
+                                height: '70px',
+                                background: 'url('+cart+') center center /  70px 50px no-repeat'
                             }}
                             />
                         }
-                        title="Friend"
+                        title=""
                         key="Friend"
-                        dot
                         selected={this.state.selectedTab === 'greenTab'}
                         onPress={() => {
                             this.setState({
@@ -116,9 +122,9 @@ export default class TabbarCom extends Component {
                         icon={
                             <div style={
                                 {
-                                    width: '22px',
-                                    height: '22px',
-                                    background: 'url(https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg) center center /  21px 21px no-repeat'
+                                    width: '80px',
+                                    height: '70px',
+                                    background: 'url('+my+') center center /  70px 50px no-repeat'
                                 }
                             }
                             />
@@ -126,14 +132,14 @@ export default class TabbarCom extends Component {
 
                         selectedIcon={
                             <div style={{
-                                width: '22px',
-                                height: '22px',
-                                background: 'url(https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg) center center /  21px 21px no-repeat'
+                                width: '80px',
+                                height: '70px',
+                                background: 'url('+_my+') center center /  70px 50px no-repeat'
                             }}
                             />
                         }
 
-                        title="My"
+                        title=""
                         key="my"
                         selected={this.state.selectedTab === 'yellowTab'}
                         onPress={() => {

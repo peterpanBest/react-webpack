@@ -10,7 +10,6 @@ import "../public/script/flexible.js";
 import "../public/iconfont/iconfont.css";
 import history  from "./history";
 // import "./static.css";
-// import 'antd-mobile/dist/antd-mobile.css';
 
 renderWithHotReload(Index);
 

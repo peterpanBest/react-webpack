@@ -36,13 +36,13 @@ commonConfig = {
                 test: /\.js$/,
                 use: ['babel-loader?cacheDirectory=true'],
                 include: path.join(__dirname, 'src')
-                }, {
+            }, 
+            {
                 test: /\.(png|jpg|gif)$/,
                 use: [{
                     loader: 'url-loader',
                     options: {
-                        limit: 8192,
-                        babelrc: true
+                        limit: 8192
                     }
                 }]
             },
@@ -54,6 +54,17 @@ commonConfig = {
                 test: /\.svg/,
                 use: ['file-loader']
             }
+            // {
+            //     test: /\.(png|jpg|gif)$/,
+            //     use: [
+            //       {
+            //         loader: 'url-loader',
+            //         options: {
+            //           limit: 8192
+            //         }
+            //       }
+            //     ]
+            // }
         ]
     },
     plugins: [
