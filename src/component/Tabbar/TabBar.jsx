@@ -26,7 +26,6 @@ export default class TabbarCom extends Component {
         };
     }
     render() {
-        console.log(_homePng)
         return (
                 <TabBar
                     unselectedTintColor="#949494"
