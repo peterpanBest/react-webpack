@@ -1,15 +1,12 @@
 import React from 'react';
-
 import {Route, Switch,Redirect} from 'react-router-dom';
-
 import Bundle from './Bundle';
-import Loading from '../component/Loading/Loading';
-
-import Home from 'bundle-loader?lazy&name=home!pages/Home/Home.jsx';
-import Page1 from 'bundle-loader?lazy&name=page1!pages/Page1/Page1';
+import Loading from '../component/Loading/Loading.jsx';
+import Cart from "bundle-loader?lazy&name=cart!pages/Cart/Cart.jsx";
+import Home from "bundle-loader?lazy&name=home!pages/Home/Home.jsx";
 import Counter from 'bundle-loader?lazy&name=counter!pages/Counter/Counter';
 import UserInfo from 'bundle-loader?lazy&name=userInfo!pages/UserInfo/UserInfo';
-import NotFound from 'bundle-loader?lazy&name=notFound!pages/NotFound/NotFound';
+import NotFound from "bundle-loader?lazy&name=notFound!pages/Notfound/Notfound.jsx";
 
 const createComponent = (component) => (props) => (
     <Bundle load={component}>
@@ -20,14 +17,14 @@ const createComponent = (component) => (props) => (
 );
 
 export default () => (
-    <div>
-        <Switch>
-            <Route exact  path="/" component={createComponent(Page1)} />
-            <Route path="/page1" component={createComponent(Page1)}/>
-            <Route path="/home" component={createComponent(Home)}/>
-            <Route path="/counter" component={createComponent(Counter)}/>
-            <Route path="/userinfo" component={createComponent(UserInfo)}/>
-            <Route component={createComponent(NotFound)}/>
-        </Switch>
-    </div>
+  <div>
+    <Switch>
+      <Route exact path="/" component={createComponent(NotFound)} />
+      <Route path="/home" component={createComponent(Home)} />
+      <Route path="/cart" component={createComponent(Cart)} />
+      <Route path="/counter" component={createComponent(Counter)} />
+      <Route path="/userinfo" component={createComponent(UserInfo)} />
+      <Route component={createComponent(NotFound)} />
+    </Switch>
+  </div>
 );

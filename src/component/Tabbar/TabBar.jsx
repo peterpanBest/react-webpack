@@ -26,7 +26,6 @@ export default class TabbarCom extends Component {
         };
     }
     render() {
-        console.log(_homePng)
         return (
                 <TabBar
                     unselectedTintColor="#949494"
@@ -56,7 +55,7 @@ export default class TabbarCom extends Component {
                             this.setState({
                                 selectedTab: 'blueTab',
                             });
-                            history.push("/page1");
+                            history.push("/home");
                         }}
                         data-seed="logId"
                     />
@@ -114,7 +113,7 @@ export default class TabbarCom extends Component {
                             this.setState({
                                 selectedTab: 'greenTab',
                             });
-                            history.push("/home");
+                            history.push("/cart");
                         }}
                     />
 
