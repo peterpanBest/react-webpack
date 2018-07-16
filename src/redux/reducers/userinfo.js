@@ -7,7 +7,7 @@ const initState = {
     errorMsg: ''
 };
 
-export default function reducer(state = initState, action) {
+export default function userinfo(state = initState, action) {
     switch (action.type) {
         case GET_USER_INFO_REQUEST:
             return {

@@ -1,8 +1,9 @@
 import React,{ Component } from  "react";
+import { connect } from 'react-redux';
 import styled from "./cart.css";
-import { cartTest } from "actions/cart";
-import { connect } from "react-redux";
+import { ajaxTest } from "actions/cart";
 import { Button, WhiteSpace, WingBlank } from "antd-mobile";
+import store from "./../../redux/store";
 
 class Home extends Component {
   constructor() {
@@ -15,30 +16,32 @@ class Home extends Component {
     }
 
   render() {
-    return <div>
+    const str = 'hello';
+    return (
+      <div>
         <WingBlank>
-          <Button type="primary" style={{ marginTop: "50px" }} onClick={() => this.props.cartTest()}>
+          <Button type="primary" style={{ marginTop: "50px" }} onClick={() => { this.props.ajaxTest('test value') }}>
             primary
           </Button>
           <WhiteSpace />
         </WingBlank>
-      </div>;
+      </div>
+    )
   }
 }
 
-// //mapStateToProps把redux的state转化为组件的props
+// export default Home;
+
+//mapStateToProps把redux的state转化为组件的props
 const mapStateToProps = (state) => {
-    return { cart: state.cart };
+  return { isLoading: state.isLoading };
 };
 
-// //mapDispatchToProps把actions转化为props的属性函数
+//mapDispatchToProps把actions转化为props的属性函数
 const mapDispatchToProps = (dispatch) => {
     return {
-        cartTest: () => {
-          dispatch(cartTest());
-        },
-        ajaxTest: () => {
-          dispatch(ajaxTest());
+      ajaxTest: (value) => {
+          dispatch(ajaxTest(value));
         }
     }
 };

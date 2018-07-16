@@ -6,7 +6,7 @@ import cart from "reducers/cart";
 
 
 export default combineReducers({
+  cart,
   counter,
-  userInfo,
-  cart
+  userInfo
 });

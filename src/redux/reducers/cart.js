@@ -1,41 +1,26 @@
-import { GET_INFO_REQUEST, GET_INFO_SUCCESS, GET_INFO_FAIL } from "actions/cart";
+import * as at from "../actionType";
 
 const initState = {
-  isLoading: false,
-  userInfo: {},
-  errorMsg: ''
+  isPending: true,
+  image: null
 };
 
-export default function reducer(state = initState, action) {
+export default function cart(state = initState, action) {
   switch (action.type) {
-    case GET_INFO_REQUEST:
+    case at.GET_INFO_SUCCESS:
+      console.log("GET_INFO_SUCCESS", action);
+      return initState;
+    case "GET_DOG_FULFILLED":
+      console.log("reducer");
       return {
-        ...state,
-        isLoading: true,
-        userInfo: {},
-        errorMsg: ''
+        isPending: false,
+        image: action.payload.message,
       };
-    case GET_INFO_SUCCESS:
-      return {
-        ...state,
-        isLoading: false,
-        userInfo: action.result,
-        errorMsg: ''
-      };
-    case GET_INFO_FAIL:
-      return {
-        ...state,
-        isLoading: false,
-        userInfo: {},
-        errorMsg: '请求错误'
-      };
+    case "GET_DOG_REJECTED":
+      console.log("REJECTED");
     default:
       return state;
   }
-}
-
-function addCountNum(value){
-  return { countNum: value.countNum + 1 };
 }
 
 

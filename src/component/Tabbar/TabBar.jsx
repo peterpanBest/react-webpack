@@ -55,7 +55,7 @@ export default class TabbarCom extends Component {
                             this.setState({
                                 selectedTab: 'blueTab',
                             });
-                            history.push("/page1");
+                            history.push("/home");
                         }}
                         data-seed="logId"
                     />
