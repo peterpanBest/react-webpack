@@ -14,7 +14,7 @@ import NotFound from 'bundle-loader?lazy&name=notFound!pages/NotFound/NotFound';
 const createComponent = (component) => (props) => (
     <Bundle load={component}>
         {
-            (Component) => Component ? <Component {...props} /> : <Loading/>
+          (Component) => Component ? <Component {...props} /> : <Loading/>
         }
     </Bundle>
 );
