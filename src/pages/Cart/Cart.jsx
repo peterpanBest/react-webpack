@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import styled from "./cart.css";
 import { ajaxTest } from "actions/cart";
 import { Button, WhiteSpace, WingBlank } from "antd-mobile";
-import store from "./../../redux/store";
+import store from "../../redux/store";
 
 class Home extends Component {
   constructor() {
