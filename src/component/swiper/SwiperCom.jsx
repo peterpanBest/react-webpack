@@ -46,7 +46,7 @@ export default class SwiperCom extends Component{
                             <a
                                 key={val}
                                 href=""
-                                style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+                            style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
                             >
                                 <img
                                     src={val.src}
@@ -55,7 +55,7 @@ export default class SwiperCom extends Component{
                                     onLoad={() => {
                                         // fire window resize event to change height
                                         window.dispatchEvent(new Event('resize'));
-                                        this.setState({ imgHeight: 'auto' });
+                                        this.setState({ imgHeight: '300' });
                                     }}
                                 />
                             </a>

@@ -1,12 +1,13 @@
-.box{
+.box {
     composes: hauto from "../../../public/style/reset.css";
-    composes: iconfont from "../../../public/iconfont/iconfont.css"; 
-    background: #de181b; 
+    composes: iconfont from "../../../public/iconfont/iconfont.css";
+    background: rgba(255, 255, 255, 0);
     position: fixed;
     top: 0;
+    z-index: 999;
 }
 
-.w700{
+.w700 {
     width: 700px;
     margin: 0 auto;
     height: auto;
@@ -16,13 +17,13 @@
     align-items: center;
 }
 
-.searchIcon{
+.searchIcon {
     font-size: 40px;
     color: white;
-    composes: icon-category from "../../../public/iconfont/iconfont.css";  
+    composes: icon-category from "../../../public/iconfont/iconfont.css";
 }
 
-.searchDiv{
+.searchDiv {
     width: 550px;
     height: auto;
     overflow: hidden;
@@ -31,11 +32,11 @@
     margin: 15px 0;
 }
 
-.loginSpan{
+.loginSpan {
     color: white;
 }
 
-.spanIcon{
+.spanIcon {
     display: block;
     float: left;
     width: 90px;
@@ -45,14 +46,14 @@
     background-size: 40px 40px;
 }
 
-.searchSearch{
+.searchSearch {
     float: left;
     font-size: 40px;
     color: silver;
-    composes: icon-search from "../../../public/iconfont/iconfont.css"; 
+    composes: icon-search from "../../../public/iconfont/iconfont.css";
 }
 
-.inputDiv{
+.inputDiv {
     display: block;
     float: left;
     height: 60px;
@@ -70,6 +71,7 @@
     margin-top: 5px;
     margin-left: 10px;
 } */
+
 /* 
 .inputDiv::-webkit-input-placeholder { 
     color:black;
