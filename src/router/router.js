@@ -6,7 +6,7 @@ import Bundle from './Bundle';
 import Loading from '../component/Loading/Loading';
 
 import Cart from "bundle-loader?lazy&name=cart!pages/Cart/Cart.jsx";
-import Home from 'bundle-loader?lazy&name=home!pages/Home/Home';
+import Home from 'bundle-loader?lazy&name=home!pages/Home/Home.jsx';
 import Counter from 'bundle-loader?lazy&name=counter!pages/Counter/Counter';
 import UserInfo from 'bundle-loader?lazy&name=userInfo!pages/UserInfo/UserInfo';
 import NotFound from 'bundle-loader?lazy&name=notFound!pages/NotFound/NotFound';

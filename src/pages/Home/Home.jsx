@@ -3,6 +3,7 @@ import styled from "./home.css";
 import SearchCom from "../../component/SearchCom/SearchCom.jsx";
 import SwiperCom from "../../component/swiper/SwiperCom.jsx";
 import ServiceCom from "../../component/ServiceCenter/ServiceCom.jsx";
+import RewardCom from "../../component/Activity/RewardActivity/RewardCom.jsx";
 
 export default class Page1 extends Component{
     constructor(props) {
@@ -59,6 +60,7 @@ export default class Page1 extends Component{
                 <SearchCom />
                 <SwiperCom />
                 <ServiceCom service={this.state.servicesList} />
+                <RewardCom />
             </div>
         )
     }
